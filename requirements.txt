@@ -1,0 +1,15 @@
+numpy
+torch
+torchvision
+transformers
+openvino
+nncf
+Pillow
+gradio
+scipy
+librosa
+huggingface_hub
+optimum[openvino]
+datasets
+tqdm
+ipywidgets
