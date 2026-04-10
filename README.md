@@ -26,7 +26,7 @@
 输出: {ocr_text, extracted_info, audio}
 ```
 
-三个模型（OCR + VLM + TTS）同时加载需 6-7 GB 显存。`ModelManager` 采用**懒加载**策略：每个模型按需加载、用完即释放，以时间换空间。
+三个模型（OCR + VLM + TTS）同时加载需大量内存/显存。`ModelManager` 采用**懒加载**策略：每个模型按需加载、用完即释放，以时间换空间。
 
 ## 提取的关键信息
 
