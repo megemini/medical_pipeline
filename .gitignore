@@ -45,3 +45,8 @@ ckpt/
 # Temp files
 *.tmp
 *.wav
+
+
+PaddleOCR-VL-1.5-OpenVINO/
+Qwen3-TTS-CustomVoice-0.6B-fp16-ov/
+Qwen3-VL-4B-Instruct-int4-ov/
