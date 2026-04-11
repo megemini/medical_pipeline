@@ -12,4 +12,4 @@ huggingface_hub==0.36.2
 optimum[openvino]
 datasets==4.8.4
 tqdm==4.67.3
-ipywidgets=8.1.8
+ipywidgets==8.1.8
