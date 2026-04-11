@@ -1,16 +1,43 @@
-numpy==1.26.4
-torch==2.8.0
+--extra-index-url https://download.pytorch.org/whl/cpu
+
+# Core inference
+openvino>=2025.4
+nncf>=2.15.0
+
+# PyTorch (CPU)
+torch==2.8
 torchvision==0.23.0
+torchaudio==2.8.0
+
+# Optimum Intel (fixed commit)
+git+https://github.com/openvino-dev-samples/optimum-intel.git@2f62e5aee74b4acba3836e1f26678c0db0a09c00
+
+# Diffusers (Z-Image-Turbo support)
+git+https://github.com/huggingface/diffusers.git@a1f36ee3ef4ae1bf98bd260e539197259aa981c1
+
+# Model download
+modelscope
+
+# Gradio UI
+gradio==6.9.0
+
+# VLM dependencies
+qwen-vl-utils
+Pillow
+
+# ASR dependencies
+scipy
+qwen-asr
+
+# General
+huggingface_hub
+accelerate
 transformers==4.57.6
-openvino==2026.1.0
-nncf==3.1.0
-pillow==10.4.0
-gradio==4.19.0
-scipy==1.15.3
-librosa==0.11.0
-huggingface_hub==0.36.2
-optimum[openvino]
-git+https://github.com/huggingface/optimum-intel.git
-datasets==4.8.4
-tqdm==4.67.3
-ipywidgets==8.1.8
+
+# Jupyter
+# jupyterlab
+# ipywidgets
+# ipykernel
+
+# Constraints
+numpy<2.0
