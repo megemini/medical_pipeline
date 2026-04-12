@@ -356,7 +356,8 @@ def vlm_extract_info(vlm_model, vlm_processor, image, ocr_text, max_new_tokens=1
 - 用简洁、通俗的语言回答，避免使用专业术语
 - 不要使用表情符号、emoji
 - 不要使用markdown格式符号（如#、**、-等），直接用纯文本输出
-- 用自然流畅的口语化表达，方便语音播报"""
+- 用自然流畅的口语化表达，方便语音播报
+- 总字数控制在 {max_new_tokens} 字以内"""
 
     messages = [
         {
