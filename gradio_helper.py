@@ -183,6 +183,7 @@ class ModelManager:
                 self.vlm_model_dir,
                 min_pixels=256 * 28 * 28,
                 max_pixels=1280 * 28 * 28,
+                fix_mistral_regex=True
             )
 
             elapsed = time.perf_counter() - start
@@ -662,13 +663,13 @@ def make_demo(model_manager, ocr_max_new_tokens=5120, vlm_max_new_tokens=1024, t
                     overlap_ratio = gr.Slider(minimum=0.0, maximum=0.3, value=0.1, step=0.05, label="重叠比例")
 
                 with gr.Accordion("生成参数设置", open=True):
-                    ocr_max_tokens = gr.Slider(minimum=1024, maximum=8192, value=ocr_max_new_tokens, step=512, label="OCR 最大生成 token 数")
-                    vlm_max_tokens = gr.Slider(minimum=256, maximum=4096, value=vlm_max_new_tokens, step=128, label="VLM 最大生成 token 数")
-                    tts_max_tokens = gr.Slider(minimum=512, maximum=4096, value=tts_max_new_tokens, step=128, label="TTS 最大生成 token 数")
+                    ocr_max_tokens = gr.Slider(minimum=100, maximum=8192, value=ocr_max_new_tokens, step=1, label="OCR 最大生成 token 数")
+                    vlm_max_tokens = gr.Slider(minimum=100, maximum=4096, value=vlm_max_new_tokens, step=1, label="VLM 最大生成 token 数")
+                    tts_max_tokens = gr.Slider(minimum=100, maximum=4096, value=tts_max_new_tokens, step=1, label="TTS 最大生成 token 数")
 
                 with gr.Accordion("语音合成设置", open=True):
                     tts_speaker = gr.Dropdown(choices=supported_speakers, value="vivian", label="说话人")
-                    tts_language = gr.Dropdown(choices=supported_languages, value="Chinese", label="语言")
+                    tts_language = gr.Dropdown(choices=supported_languages, value="chinese", label="语言")
                     tts_instruct = gr.Textbox(value="用友好亲切的语气说话。", label="风格指令")
 
                 run_btn = gr.Button("开始识别", variant="primary")
